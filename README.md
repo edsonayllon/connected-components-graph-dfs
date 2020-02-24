@@ -14,3 +14,10 @@ twitter: https://twitter.com/relativeread
 
 # connected components graph dfs
  
+## Running
+
+Run `app.js`.
+
+```
+node app.js
+```
