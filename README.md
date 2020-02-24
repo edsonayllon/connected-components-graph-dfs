@@ -13,6 +13,10 @@ twitter: https://twitter.com/relativeread
 
 
 # connected components graph dfs
+
+## Description
+
+Finds graphs in a grid, where a node is of value 1, and edges are defined by touching nodes in 8 directions (cardinal and diagonal).
  
 ## Running
 
