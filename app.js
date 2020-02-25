@@ -1,13 +1,13 @@
 // grid is a 2 dimensional array
 const grid = [
-    [1,1,0,0,0],
-    [1,0,1,0,1],
-    [0,0,0,0,0],
-    [0,0,0,1,0],
-    [1,1,0,0,1]
+    [1,1,0,0,0,0,0,1,1],
+    [1,0,0,0,1,1,1,0,0],
+    [0,0,0,0,0,0,0,0,0],
+    [0,0,0,1,1,0,1,1,1],
+    [1,0,0,1,1,0,0,0,1]
 ]
 
-const findAnimals = (grid) => {
+const findGraphs = (grid) => {
     let result = {
         grid, 
         graphs: []
@@ -19,7 +19,6 @@ const findAnimals = (grid) => {
                 result.grid = prog.grid
                 result.graphs.push({nodes: prog.nodes})
             }
-            
         }
     }
     console.log(result, 'graphs: ', result.graphs.length)
@@ -63,4 +62,4 @@ const hasEdges = (r, c, grid) => {
     }
 }
 
-findAnimals(grid)
+findGraphs(grid)
