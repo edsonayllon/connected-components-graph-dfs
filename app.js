@@ -7,11 +7,13 @@ const grid = [
     [1,0,0,1,1,0,0,0,1]
 ]
 
+// checks each cell for a graph, ignores graphs already found
 const findGraphs = (grid) => {
     let result = {
         grid, 
         graphs: []
     }
+    
     for (let row = 0; row < grid.length; row++) {
         for (let column = 0; column < grid[0].length; column++) {
             if (result.grid[row][column] === 1) {
@@ -21,6 +23,7 @@ const findGraphs = (grid) => {
             }
         }
     }
+
     console.log(result, 'graphs: ', result.graphs.length)
     return result
 }
@@ -37,9 +40,9 @@ const dfs = (grid, r, c, incrementor = [0]) => {
     const v_r = [-1,-1,-1, 0, 1, 1, 1, 0]
     const v_c = [-1, 0, 1, 1, 1, 0,-1,-1]
 
-    // iterate through neighbor cells
+    // check if node has edges, iterates through vectors containing 8 directions
     for (let i = 0; i < v_r.length; i++) {
-        if (hasEdges(r + v_r[i], c + v_c[i], grid)) {
+        if (isNode(r + v_r[i], c + v_c[i], grid)) {
             dfs(grid, r + v_r[i], c + v_c[i], incrementor)
         }
     }
@@ -50,11 +53,11 @@ const dfs = (grid, r, c, incrementor = [0]) => {
     }
 }
 
-const hasEdges = (r, c, grid) => {
-    // check if node has edges, and not previously visited, within boundary
+// check if cell is a node
+const isNode = (r, c, grid) => {
     if (r >= 0 && c >= 0 
         && r < grid.length && c < grid[0].length
-        && grid[r][c] != 0 && grid[r][c] != 'v'
+        && grid[r][c] === 1
     ) {
         return true
     } else {
