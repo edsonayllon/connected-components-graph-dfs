@@ -12,9 +12,9 @@ twitter: https://twitter.com/relativeread
 ## Algo 4-2020
 
 
-# connected components graph dfs
+# Neighboring Nodes Search
 
-Tests graph theory with 2 dimensional grids. 
+Searches a grid for nodes that connect into a graph. Returns the number of graphs, and the node in each graph. 
 
 ## 1. Significance
 
